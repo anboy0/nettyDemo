@@ -52,7 +52,7 @@ public class TimeClient {
 
                 /**connect：发起异步连接操作，调用同步方法 sync 等待连接成功*/
                 ChannelFuture channelFuture = b.connect(host, port).sync();
-                System.out.println(Thread.currentThread().getName() + ",客户端发起异步连接..........");
+                System.out.println("当前线程名称为:"+Thread.currentThread().getName() + ",客户端发起异步连接..........");
 
                 /**等待客户端链路关闭*/
                 channelFuture.channel().closeFuture().sync();

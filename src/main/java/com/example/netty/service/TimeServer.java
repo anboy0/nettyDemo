@@ -35,7 +35,7 @@ public class TimeServer {
             /**服务器启动辅助类配置完成后，调用 bind 方法绑定监听端口，调用 sync 方法同步等待绑定操作完成*/
             ChannelFuture f = b.bind(port).sync();
 
-            System.out.println(Thread.currentThread().getName() + ",服务器开始监听端口，等待客户端连接.........");
+            System.out.println("当前线程名称:"+Thread.currentThread().getName() + ",服务器开始监听端口:"+port+"，等待客户端连接.........");
             /**下面会进行阻塞，等待服务器连接关闭之后 main 方法退出，程序结束
              *
              * */

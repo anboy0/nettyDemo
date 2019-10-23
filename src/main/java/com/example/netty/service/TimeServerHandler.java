@@ -34,7 +34,7 @@ public class TimeServerHandler extends ChannelInboundHandlerAdapter {
          * */
         buf.readBytes(reg);
         String body = new String(reg, "UTF-8");
-        System.out.println(Thread.currentThread().getName() + ",The server receive  order : " + body);
+        System.out.println("当前线程名称为:"+Thread.currentThread().getName() + ",The server receive  order : " + body);
 
         /**回复消息
          * copiedBuffer：创建一个新的缓冲区，内容为里面的参数

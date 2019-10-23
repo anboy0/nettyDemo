@@ -19,7 +19,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        String reqMsg = "我是客户端 " + Thread.currentThread().getName();
+        String reqMsg = "我是客户端 " + "线程名称为:"+Thread.currentThread().getName();
         byte[] reqMsgByte = reqMsg.getBytes("UTF-8");
         ByteBuf reqByteBuf = Unpooled.buffer(reqMsgByte.length);
         /**
@@ -39,7 +39,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
         String body = new String(req, "UTF-8");
-        System.out.println(Thread.currentThread().getName() + ",Server return Message：" + body);
+        System.out.println("当前线程名称为:"+Thread.currentThread().getName() + ",Server return Message：" + body);
         ctx.close();
     }
 
