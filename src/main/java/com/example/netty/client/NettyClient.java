@@ -12,7 +12,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 /**
  * Created by Administrator on 2017/5/16.
  */
-public class TimeClient {
+public class NettyClient {
 
     /**
      * 使用 3 个线程模拟三个客户端
@@ -46,7 +46,7 @@ public class TimeClient {
                         .handler(new ChannelInitializer<SocketChannel>() {
                             @Override
                             public void initChannel(SocketChannel ch) throws Exception {
-                                ch.pipeline().addLast(new TimeClientHandler());
+                                ch.pipeline().addLast(new NettyClientHandler());
                             }
                         });
 

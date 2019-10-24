@@ -10,7 +10,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * Created by Administrator on 2017/5/16.
  * ChannelInboundHandlerAdapter extends ChannelHandlerAdapter 用于对网络事件进行读写操作
  */
-public class TimeServerHandler extends ChannelInboundHandlerAdapter {
+public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 收到客户端消息，自动触发

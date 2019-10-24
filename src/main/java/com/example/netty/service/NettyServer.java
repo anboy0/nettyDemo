@@ -10,10 +10,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * Created by Administrator on 2017/5/16.
  */
-public class TimeServer {
+public class NettyServer {
     public static void main(String[] args) {
         int port = 9898;
-        new TimeServer().bind(port);
+        new NettyServer().bind(port);
     }
 
     public void bind(int port) {
@@ -52,7 +52,7 @@ public class TimeServer {
     private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
         @Override
         protected void initChannel(SocketChannel arg0) throws Exception {
-            arg0.pipeline().addLast(new TimeServerHandler());
+            arg0.pipeline().addLast(new NettyServerHandler());
         }
     }
 }
