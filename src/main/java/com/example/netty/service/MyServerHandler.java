@@ -4,14 +4,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import org.springframework.boot.web.servlet.server.Session;
 
-
-/**
- * Created by Administrator on 2017/5/16.
- * ChannelInboundHandlerAdapter extends ChannelHandlerAdapter 用于对网络事件进行读写操作
- */
-public class NettyServerHandler extends ChannelInboundHandlerAdapter {
+public class MyServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 收到客户端消息，自动触发
@@ -22,7 +16,6 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("进来了:Server.channelRead");
         /**
          * 将 msg 转为 Netty 的 ByteBuf 对象，类似 JDK 中的 java.nio.ByteBuffer，不过 ButeBuf 功能更强，更灵活
          */
